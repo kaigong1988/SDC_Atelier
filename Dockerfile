@@ -1,12 +1,18 @@
-FROM node:13.10.1
-RUN mkdir /app
-ADD . /app
-WORKDIR /app
 
-COPY package*.json ./
+FROM node:latest
+
+RUN mkdir /atelier
+
+ADD . /atelier
+
+WORKDIR /atelier
+
+COPY package.json .
 
 RUN npm install
+
 COPY . .
-EXPOSE 3001
+
+EXPOSE 3000
 
 CMD [ "npm", "start" ]

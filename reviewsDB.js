@@ -5,6 +5,8 @@ const reviews_dbConnection = mysql.createConnection({
   user: 'root',
   password: MYSQL_PW,
   database: 'SDC_catwalk',
+  host: '127.0.0.1',
+  port: '3306',
 });
 
 reviews_dbConnection.connect(function (err) {
@@ -14,5 +16,24 @@ reviews_dbConnection.connect(function (err) {
     console.log('connected!');
   }
 });
+
+/** creating connection pool  **/
+
+// reviews_dbConnection = mysql.createPool({
+//   user: 'root',
+//   password: MYSQL_PW,
+//   database: 'SDC_catwalk',
+//   host: '127.0.0.1',
+//   port: '3306',
+//   connectionLimit: 10
+// });
+
+// reviews_dbConnection.getConnection(function (error) {
+//   if (error) {
+//     console.log('Error connecting to Questions_Db: ', error);
+//   } else {
+//     console.log('Connected to Questions Db!');
+//   }
+// });
 
 module.exports = reviews_dbConnection;

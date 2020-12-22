@@ -2,6 +2,8 @@ CREATE DATABASE SDC_catwalk;
 
 USE SDC_catwalk;
 
+/* some weird issue with prettier even I configured prettier not to format spl file*/
+
 CREATE TABLE `reviews`
 (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
