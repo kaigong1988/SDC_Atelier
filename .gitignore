@@ -1,0 +1,6 @@
+node_modules
+package-lock.json
+.DS_Store
+client/dist/bundle.js
+database/Reviews/config.js
+config.js
