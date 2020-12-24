@@ -2,7 +2,9 @@ const {
   getAllReviews,
   getAllMeta,
   createReview,
-} = require('./reviews-model.js');
+} = require('../models/reviews-model.js');
+
+const redisClient = require('../databases/redis_connection.js').client;
 
 module.exports = {
   getAll: (req, res) => {
@@ -11,6 +13,11 @@ module.exports = {
         console.log('failed');
         res.sendStatus(500);
       } else {
+        redisClient.setex(
+          JSON.stringify(req.query),
+          3600,
+          JSON.stringify(result)
+        );
         res.json(result);
       }
     });
@@ -21,6 +28,11 @@ module.exports = {
         console.log('failed');
         res.sendStatus(500);
       } else {
+        redisClient.setex(
+          `${req.query.product_id}`,
+          3600,
+          JSON.stringify(result)
+        );
         res.json(result);
       }
     });

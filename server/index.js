@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const cors = require('cors');
 const router = require('./routes.js');
-const ReviewsController = require('./reviews-controller.js');
+const ReviewsController = require('./controllers/reviews-controller.js');
 
 const app = express();
 const port = 3000;

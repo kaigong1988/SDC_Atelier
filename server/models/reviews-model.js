@@ -1,4 +1,4 @@
-const reviewDb = require('./reviewsDB.js');
+const reviewDb = require('../databases/reviewsDB.js');
 
 module.exports = {
   getAllReviews: function (params, callback) {

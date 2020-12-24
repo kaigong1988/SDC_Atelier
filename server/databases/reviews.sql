@@ -1,3 +1,4 @@
+/* eslint-disable */
 CREATE DATABASE SDC_catwalk;
 
 USE SDC_catwalk;
@@ -5,10 +6,7 @@ USE SDC_catwalk;
 /* some weird issue with prettier even I configured prettier not to format spl file*/
 
 CREATE TABLE `reviews`
-(
-  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `product_id` INT UNSIGNED NOT NULL,
-  `rating` INT
+(`id` INT UNSIGNED NOT NULL AUTO_INCREMENT, `product_id` INT UNSIGNED NOT NULL, `rating` INT
 (2) UNSIGNED NOT NULL,
   `date` DATE NOT NULL,
   `summary` VARCHAR
@@ -82,7 +80,7 @@ CREATE INDEX review_id_index ON characteristic_reviews (review_id);
 
 /* remove double quotes from mysql column */
 UPDATE review_photos
-   SET url = TRIM(BOTH
+SET url = TRIM(BOTH
 '"' FROM url)
 
 /* remove double quotes from mysql column database characteristci*/
