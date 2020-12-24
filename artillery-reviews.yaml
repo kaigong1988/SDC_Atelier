@@ -1,0 +1,22 @@
+config:
+  target: 'http://localhost:3000'
+  http:
+    timeout: 10 # Responses have to be sent within 10 seconds or the request will be aborted
+
+  phases:
+    # Create 100 virtual users every second for 60 seconds
+    - duration: 30 # seconds
+      arrivalRate: 500 # virtual users
+      name: 'Load test - user interation rate'
+
+scenarios:
+  - name: 'Load test getting questions, posting questions, getting answers, posting answers, updating helpful and reported'
+    flow:
+      - get:
+          url: '/reviews/?page=1&count=5&product_id=2&sort=helpfulness'
+      - get:
+          url: '/reviews/meta/?product_id=2'
+      - get:
+          url: '/reviews/?page=1&count=5&product_id=5&sort=helpfulness'
+      - get:
+          url: '/reviews/meta/?product_id=6'
