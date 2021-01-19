@@ -2,6 +2,8 @@ const {
   getAllReviews,
   getAllMeta,
   createReview,
+  markHelpful,
+  markReport,
 } = require('../models/reviews-model.js');
 
 const redisClient = require('../databases/redis_connection.js').client;
@@ -53,6 +55,25 @@ module.exports = {
         res.sendStatus(500);
       } else {
         res.sendStatus(201);
+      }
+    });
+  },
+  helpfulReview: (req, res) => {
+    markHelpful(req.params.review_id, (error, result) => {
+      if (error) {
+        console.log('Error with updating helpful review', error);
+      } else {
+        res.send();
+      }
+    });
+  },
+
+  reportReview: (req, res) => {
+    markReport(req.params.review_id, (error, result) => {
+      if (error) {
+        console.log('Error with reporting review: ', error);
+      } else {
+        res.send();
       }
     });
   },
