@@ -23,8 +23,8 @@ reviews_dbConnection = mysql.createPool({
   user: 'root',
   password: MYSQL_PW,
   database: 'SDC_catwalk',
-  // host: 'mysql1',
-  // port: '3306',
+  host: 'mysql1',
+  port: '3306',
   connectionLimit: 10,
 });
 
