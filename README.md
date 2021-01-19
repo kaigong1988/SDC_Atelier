@@ -16,6 +16,9 @@ API Layer for Front End Capstone Application capable of handling web-scale produ
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#List Reviews">List Reviews</a></li>
+        <li><a href="#Get Review Metadata">Get Review Metadata</a></li>
+        <li><a href="#Add a Review">Add a Review</a></li>
       </ul>
     </li>
   </ol>
